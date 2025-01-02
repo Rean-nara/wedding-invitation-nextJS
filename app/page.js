@@ -4,6 +4,12 @@ import {Italianno} from "next/font/google";
 import "./globals.css";
 import Groom from "@/components/groom";
 import Bride from "@/components/bride";
+import Drinks from "@/components/drinks";
+import Ring from "@/components/ring";
+import Camera from "@/components/camera";
+import Lunch from "@/components/lunch";
+import Closing from "@/components/closing";
+import Love from "@/components/love";
 const josefin = Josefin_Sans({
   subsets: ["latin"],
   weight: "400",
@@ -12,6 +18,7 @@ const italianno = Italianno({
   subsets: ["latin"],
   weight: "400",
 });
+
 export default function Home() {
   return (
     <main className={josefin.className}>
@@ -32,7 +39,7 @@ export default function Home() {
           </div>
           <Image src="/bottom-flower.png" alt="Bottom Flower" width={411} height={196} className="h-[196px] object-cover" />
           {/* Timer */}
-          <div className="flex gap-7 justify-center mb-7 mt-7">
+          <div className="flex gap-7 justify-center my-7">
             <div className="relative">
               <Image src="/flower-circle.png" alt="Flower Circle" width={96} height={94} className="absolute w-[96px] h-[94px] object-cover origin-center rotate-[38deg] z-20 -top-[0.7rem] left-[0.2rem]" />
               <div className="rounded-full w-[68px] h-[72px] bg-gray-300 flex justify-center items-center relative text-center">
@@ -59,7 +66,7 @@ export default function Home() {
             </div>
           </div>
           {/* Couple */}
-          <div className="flex gap-3 justify-center mb-7">
+          <div className="flex gap-3 justify-center">
             <div className="rounded-t-full w-44 h-max bg-white shadow-md shadow-black/25 flex flex-col relative">
               <div className="flex justify-center">
                 <Image src="/groom.jpg" alt="Groom" width={150} height={185} className="w-[150px] h-[185px] rounded-t-full mt-4" />
@@ -87,9 +94,9 @@ export default function Home() {
               <p className="z-30 mr-[0.8rem] text-xs text-end">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna orci auctor vitae nisl. fringilla pellesque amet tempus.</p>
             </div>
           </div>
-          <h1 className={`${italianno.className} text-[3.5rem] flex justify-center`}>Our Sweets Memories</h1>
+          <h1 className={`${italianno.className} text-[3.5rem] flex justify-center my-7`}>Our Sweets Memories</h1>
           {/* Memories */}
-          <div className="flex flex-col gap-y-6 mb-7">
+          <div className="flex flex-col gap-y-6">
             <div className="flex justify-evenly">
               <div className="w-40 h-44 flex justify-center items-center bg-white shadow-md shadow-black/25">
                 <div className="w-36 h-40 bg-gray-400 overflow-hidden">
@@ -132,48 +139,110 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <h1 className={`${italianno.className} text-[3.5rem] flex justify-center`}>When and Where</h1>
+          <h1 className={`${italianno.className} text-[3.5rem] flex justify-center my-7`}>When and Where</h1>
           <p className="flex justify-center">
             Saturday, 17 July 2027, 11:00 AM - 03.00 PM <br /> Avalon Castle, Cockatoo VIC 3781, Australia
           </p>
-          <div className="flex justify-center mt-4">
-            <div className="w-40 h-40 bg-gray-400">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3147.1136080377696!2d145.5111083!3d-37.927776300000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b29d8b91c4e508f%3A0x62d79fdfeb8b7bfc!2sAvalon%20Castle!5e0!3m2!1sen!2sid!4v1735689780501!5m2!1sen!2sid" width={160} height={160} className="border-none" allowFullScreen="yes" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+          {/* Map and RSVP */}
+          <div className="flex flex-col mt-4 bg-white shadow-md shadow-black/25 w-max h-max mx-auto">
+            <div className="w-80 h-[200px] bg-gray-400">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3147.1136080377696!2d145.5111083!3d-37.927776300000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b29d8b91c4e508f%3A0x62d79fdfeb8b7bfc!2sAvalon%20Castle!5e0!3m2!1sen!2sid!4v1735689780501!5m2!1sen!2sid" width={320} height={200} className="border-none" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
             </div>
-            <div className="w-40 h-40 bg-white shadow-md shadow-black/25 flex flex-col">
-              <h1 className="flex justify-center">RSVP</h1>
-              <h1 className={`${italianno.className} flex justify-center`}>Naruto & Hinata</h1>
-              <hr className="w-full" />
-              <form action="" method="post" className="mx-2 flex flex-col gap-1 mt-1">
-                <div className="flex">
-                  <label htmlFor="names" className="text-sm">
+            <div className="w-80 h-auto bg-gradient-to-b from-white to-gray-100 shadow-lg rounded-lg flex flex-col p-4 animate-fade-in">
+              <h1 className="text-2xl font-bold text-gray-700 text-center mb-2">RSVP</h1>
+              <h1 className={`text-3xl text-center text-pink-500 italic ${italianno.className}`}>Naruto & Hinata</h1>
+              <hr className="w-full border-t-2 border-gray-300 mt-2 mb-4" />
+              <form action="" method="post" className="flex flex-col gap-3">
+                <div className="flex flex-col">
+                  <label htmlFor="names" className="text-sm font-medium text-gray-600">
                     Name(s):
                   </label>
-                  <div className="flex flex-col">
-                    <input type="text" id="names" className="w-full outline-none border-none text-sm" placeholder="Type here..." />
-                    <hr className="w-full" />
-                  </div>
+                  <input type="text" id="names" className="w-full outline-none border border-gray-300 rounded-md text-sm px-2 py-1 focus:border-blue-400 focus:ring focus:ring-blue-100 placeholder-gray-400" placeholder="Type here..." />
                 </div>
-                <div className="flex">
-                  <input type="radio" name="rsvp" id="radio-attend" className="text-sm" />
-                  <label for="radio-attend" className="text-sm">
+                <div className="flex items-center gap-2">
+                  <input type="radio" name="rsvp" id="radio-attend" className="text-sm focus:ring focus:ring-blue-400" />
+                  <label htmlFor="radio-attend" className="text-sm text-gray-600">
                     Yes, I will be there
                   </label>
                 </div>
-                <div className="flex">
-                  <input type="radio" name="rsvp" id="radio-not" className="text-sm" />
-                  <label for="radio-not" className="text-sm">
+                <div className="flex items-center gap-2">
+                  <input type="radio" name="rsvp" id="radio-not" className="text-sm focus:ring focus:ring-red-400" />
+                  <label htmlFor="radio-not" className="text-sm text-gray-600">
                     Sorry, I can't come
                   </label>
                 </div>
-                <div className="flex justify-center">
-                  <button type="submit" className="bg-blue-500 text-white rounded-sm text-sm p-1">
+                <div className="flex justify-center mt-4">
+                  <button type="submit" className="bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full text-sm px-6 py-2 shadow-lg transform transition-transform hover:scale-105">
                     RSVP
                   </button>
                 </div>
               </form>
             </div>
           </div>
+          <h1 className={`${italianno.className} text-[3.5rem] flex justify-center my-7`}>Our Wedding Plan</h1>
+          {/* Rundown */}
+          <div className="w-60 h-[545px] rounded-t-full outline-[6px] outline outline-gray-300 mx-auto bg-white shadow-lg shadow-black/25 relative">
+            {/* Line */}
+            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-[2px] h-full bg-gray-300">
+              <div className="absolute top-[6.5rem] left-1/2 transform -translate-x-1/2">
+                <span>
+                  <Love />
+                </span>
+              </div>
+              <div className="absolute top-52 left-1/2 transform -translate-x-1/2">
+                <span>
+                  <Love />
+                </span>
+              </div>
+              <div className="absolute top-[19.5rem] left-1/2 transform -translate-x-1/2">
+                <span>
+                  <Love />
+                </span>
+              </div>
+              <div className="absolute top-[25rem] left-1/2 transform -translate-x-1/2">
+                <span>
+                  <Love />
+                </span>
+              </div>
+              <div className="absolute top-[31rem] left-1/2 transform -translate-x-1/2">
+                <span>
+                  <Love />
+                </span>
+              </div>
+            </div>
+            {/* Activity */}
+            <div className="absolute top-20 w-full flex flex-col items-center gap-10 -left-[3.75rem]">
+              <div className="text-center">
+                <Drinks />
+                <p className="text-sm text-gray-500 mt-1">Welcome Drinks</p>
+              </div>
+              <div className="text-center">
+                <Ring />
+                <p className="text-sm text-gray-500 mt-1">Ceremony</p>
+              </div>
+              <div className="text-center">
+                <Camera />
+                <p className="text-sm text-gray-500 mt-1">Party Photos</p>
+              </div>
+              <div className="text-center">
+                <Lunch />
+                <p className="text-sm text-gray-500 mt-1">Lunch Time</p>
+              </div>
+              <div className="text-center">
+                <Closing />
+                <p className="text-sm text-gray-500 mt-1">Closing</p>
+              </div>
+            </div>
+            {/* Time */}
+            <div className={`${italianno.className} absolute top-0 w-full -right-[3.75rem]`}>
+              <p className="text-2xl text-gray-500 absolute top-[6rem] left-1/2 transform -translate-x-1/2">11.00 am</p>
+              <p className="text-2xl text-gray-500 absolute top-[12.5rem] left-1/2 transform -translate-x-1/2">12.00 pm</p>
+              <p className="text-2xl text-gray-500 absolute top-[19rem] left-1/2 transform -translate-x-1/2">01.00 pm</p>
+              <p className="text-2xl text-gray-500 absolute top-[24.5rem] left-1/2 transform -translate-x-1/2">02.00 pm</p>
+              <p className="text-2xl  text-gray-500 absolute top-[30.5rem] left-1/2 transform -translate-x-1/2">03.00 pm</p>
+            </div>
+          </div>
+          <div className="w-[367px] h-44 bg-gray-400 mx-auto mt-7 mb-2"></div>
         </div>
       </div>
     </main>
