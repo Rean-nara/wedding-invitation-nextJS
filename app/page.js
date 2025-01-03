@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import {Josefin_Sans, Josefin_Sans} from "next/font/google";
 import {Italianno} from "next/font/google";
@@ -10,6 +11,7 @@ import Camera from "@/components/camera";
 import Lunch from "@/components/lunch";
 import Closing from "@/components/closing";
 import Love from "@/components/love";
+import {useState} from "react";
 const josefin = Josefin_Sans({
   subsets: ["latin"],
   weight: "400",
@@ -20,15 +22,27 @@ const italianno = Italianno({
 });
 
 export default function Home() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState("");
+
+  const openModal = (image) => {
+    setSelectedImage(image);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedImage("");
+  };
   return (
     <main className={josefin.className}>
       <div className="bg-white flex justify-center">
         <div className="w-[412px] overflow-x-hidden">
           <Image src="/header-flower.png" alt="Header Flower" width={412} height={38} priority />
           <h1 className={`${italianno.className} text-[3.5rem] flex justify-center`}>We're Getting Married</h1>
-          <div className="flex justify-center">
+          <div className="flex justify-center relative">
             <Image className="z-20" src="/frame-couple.png" alt="Frame Couple" width={326} height={396} priority />
-            <div className="absolute left-1/2 top-[40%] -translate-x-1/2 w-max h-max">
+            <div className="absolute left-1/2 top-24 -translate-x-1/2 w-max h-max">
               <Image src="/couple.png" alt="Frame Couple" width={233} height={265} priority />
             </div>
           </div>
@@ -99,46 +113,57 @@ export default function Home() {
           <div className="flex flex-col gap-y-6">
             <div className="flex justify-evenly">
               <div className="w-40 h-44 flex justify-center items-center bg-white shadow-md shadow-black/25">
-                <div className="w-36 h-40 bg-gray-400 overflow-hidden">
+                <div className="w-36 h-40 bg-gray-400 overflow-hidden cursor-pointer" onClick={() => openModal("/moment-1.jpg")}>
                   <Image src="/moment-1.jpg" alt="Our Moment" width={144} height={160} />
                 </div>
               </div>
-              <div className="w-40 h-44 flex justify-center items-center bg-white shadow-md shadow-black/25">
+              <div className="w-40 h-44 flex justify-center items-center bg-white shadow-md shadow-black/25" onClick={() => openModal("/moment-2.jpg")}>
                 <div className="w-36 h-40 bg-gray-400 overflow-hidden">
                   <Image src="/moment-2.jpg" alt="Our Moment" width={144} height={160} />
                 </div>
               </div>
             </div>
             <div className="flex justify-evenly">
-              <div className="w-28 h-32 flex justify-center items-center rounded-l-full bg-white shadow-md shadow-black/25">
+              <div className="w-28 h-32 flex justify-center items-center rounded-l-full bg-white shadow-md shadow-black/25" onClick={() => openModal("/moment-left-1.png")}>
                 <div className="w-24 h-28 rounded-l-full bg-gray-400 overflow-hidden">
                   <Image src="/moment-left-1.png" alt="Our Moment" width={96} height={112} />
                 </div>
               </div>
-              <div className="w-28 h-32 flex justify-center items-center bg-white shadow-md shadow-black/25">
+              <div className="w-28 h-32 flex justify-center items-center bg-white shadow-md shadow-black/25" onClick={() => openModal("/moment-3.jpg")}>
                 <div className="w-24 h-28 bg-gray-400 overflow-hidden">
                   <Image src="/moment-3.jpg" alt="Our Moment" width={96} height={112} className="object-bottom object-none" />
                 </div>
               </div>
-              <div className="w-28 h-32 flex justify-center items-center rounded-r-full bg-white shadow-md shadow-black/25">
+              <div className="w-28 h-32 flex justify-center items-center rounded-r-full bg-white shadow-md shadow-black/25" onClick={() => openModal("/moment-right-1.png")}>
                 <div className="w-24 h-28 rounded-r-full bg-gray-400 overflow-hidden">
                   <Image src="/moment-right-1.png" alt="Our Moment" width={96} height={112} />
                 </div>
               </div>
             </div>
             <div className="flex justify-evenly">
-              <div className="w-40 h-44 flex justify-center items-center bg-white shadow-md shadow-black/25">
+              <div className="w-40 h-44 flex justify-center items-center bg-white shadow-md shadow-black/25" onClick={() => openModal("/moment-4.jpg")}>
                 <div className="w-36 h-40 bg-gray-400 overflow-hidden">
                   <Image src="/moment-4.jpg" alt="Our Moment" width={144} height={160} />
                 </div>
               </div>
-              <div className="w-40 h-44 flex justify-center items-center bg-white shadow-md shadow-black/25">
+              <div className="w-40 h-44 flex justify-center items-center bg-white shadow-md shadow-black/25" onClick={() => openModal("/moment-5.jpg")}>
                 <div className="w-36 h-40 bg-gray-400 overflow-hidden">
                   <Image src="/moment-5.jpg" alt="Our Moment" width={144} height={160} />
                 </div>
               </div>
             </div>
           </div>
+          {/* Popup Picture */}
+          {isModalOpen && (
+            <div className="fixed inset-0 bg-black/50 flex justify-center items-center z-50 animate-fadeIn" onClick={closeModal}>
+              <div className="relative bg-white shadow-lg overflow-hidden w-72 h-80" onClick={(e) => e.stopPropagation()}>
+                <Image src={selectedImage} alt="Expanded Moment" width={500} height={500} className="w-full h-full" priority />
+                <button className="absolute top-2 right-2 bg-white rounded-full p-2 w-7 h-7 flex justify-center items-center" onClick={closeModal}>
+                  <p className="text-base">✕</p>
+                </button>
+              </div>
+            </div>
+          )}
           <h1 className={`${italianno.className} text-[3.5rem] flex justify-center my-7`}>When and Where</h1>
           <p className="flex justify-center">
             Saturday, 17 July 2027, 11:00 AM - 03.00 PM <br /> Avalon Castle, Cockatoo VIC 3781, Australia
@@ -179,70 +204,88 @@ export default function Home() {
               </form>
             </div>
           </div>
-          <h1 className={`${italianno.className} text-[3.5rem] flex justify-center my-7`}>Our Wedding Plan</h1>
-          {/* Rundown */}
-          <div className="w-60 h-[545px] rounded-t-full outline-[6px] outline outline-gray-300 mx-auto bg-white shadow-lg shadow-black/25 relative">
-            {/* Line */}
-            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-[2px] h-full bg-gray-300">
-              <div className="absolute top-[6.5rem] left-1/2 transform -translate-x-1/2">
-                <span>
-                  <Love />
-                </span>
+          <div className="relative">
+            <h1 className={`${italianno.className} text-[3.5rem] flex justify-center my-7`}>Our Wedding Plan</h1>
+            {/* Rundown */}
+            <div className="w-60 h-[545px] rounded-t-full outline-[6px] outline outline-gray-300 mx-auto bg-white shadow-lg shadow-black/25 relative">
+              {/* Line */}
+              <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-[2px] h-full bg-gray-300">
+                <div className="absolute top-[6.5rem] left-1/2 transform -translate-x-1/2">
+                  <span>
+                    <Love />
+                  </span>
+                </div>
+                <div className="absolute top-52 left-1/2 transform -translate-x-1/2">
+                  <span>
+                    <Love />
+                  </span>
+                </div>
+                <div className="absolute top-[19.5rem] left-1/2 transform -translate-x-1/2">
+                  <span>
+                    <Love />
+                  </span>
+                </div>
+                <div className="absolute top-[25rem] left-1/2 transform -translate-x-1/2">
+                  <span>
+                    <Love />
+                  </span>
+                </div>
+                <div className="absolute top-[31rem] left-1/2 transform -translate-x-1/2">
+                  <span>
+                    <Love />
+                  </span>
+                </div>
               </div>
-              <div className="absolute top-52 left-1/2 transform -translate-x-1/2">
-                <span>
-                  <Love />
-                </span>
+              {/* Activity */}
+              <div className="absolute top-20 w-full flex flex-col items-center gap-10 -left-[3.75rem]">
+                <div className="text-center">
+                  <Drinks />
+                  <p className="text-sm text-gray-500 mt-1">Welcome Drinks</p>
+                </div>
+                <div className="text-center">
+                  <Ring />
+                  <p className="text-sm text-gray-500 mt-1">Ceremony</p>
+                </div>
+                <div className="text-center">
+                  <Camera />
+                  <p className="text-sm text-gray-500 mt-1">Party Photos</p>
+                </div>
+                <div className="text-center">
+                  <Lunch />
+                  <p className="text-sm text-gray-500 mt-1">Lunch Time</p>
+                </div>
+                <div className="text-center">
+                  <Closing />
+                  <p className="text-sm text-gray-500 mt-1">Closing</p>
+                </div>
               </div>
-              <div className="absolute top-[19.5rem] left-1/2 transform -translate-x-1/2">
-                <span>
-                  <Love />
-                </span>
-              </div>
-              <div className="absolute top-[25rem] left-1/2 transform -translate-x-1/2">
-                <span>
-                  <Love />
-                </span>
-              </div>
-              <div className="absolute top-[31rem] left-1/2 transform -translate-x-1/2">
-                <span>
-                  <Love />
-                </span>
+              {/* Time */}
+              <div className={`${italianno.className} absolute top-0 w-full -right-[3.75rem]`}>
+                <p className="text-2xl text-gray-500 absolute top-[6rem] left-1/2 transform -translate-x-1/2">11.00 am</p>
+                <p className="text-2xl text-gray-500 absolute top-[12.5rem] left-1/2 transform -translate-x-1/2">12.00 pm</p>
+                <p className="text-2xl text-gray-500 absolute top-[19rem] left-1/2 transform -translate-x-1/2">01.00 pm</p>
+                <p className="text-2xl text-gray-500 absolute top-[24.5rem] left-1/2 transform -translate-x-1/2">02.00 pm</p>
+                <p className="text-2xl  text-gray-500 absolute top-[30.5rem] left-1/2 transform -translate-x-1/2">03.00 pm</p>
               </div>
             </div>
-            {/* Activity */}
-            <div className="absolute top-20 w-full flex flex-col items-center gap-10 -left-[3.75rem]">
-              <div className="text-center">
-                <Drinks />
-                <p className="text-sm text-gray-500 mt-1">Welcome Drinks</p>
-              </div>
-              <div className="text-center">
-                <Ring />
-                <p className="text-sm text-gray-500 mt-1">Ceremony</p>
-              </div>
-              <div className="text-center">
-                <Camera />
-                <p className="text-sm text-gray-500 mt-1">Party Photos</p>
-              </div>
-              <div className="text-center">
-                <Lunch />
-                <p className="text-sm text-gray-500 mt-1">Lunch Time</p>
-              </div>
-              <div className="text-center">
-                <Closing />
-                <p className="text-sm text-gray-500 mt-1">Closing</p>
-              </div>
+            {/* Moving flower */}
+            <div className="absolute top-20 right-0">
+              <Image src="/moving-flower.png" alt="Moving Flower" width={130} height={126} />
             </div>
-            {/* Time */}
-            <div className={`${italianno.className} absolute top-0 w-full -right-[3.75rem]`}>
-              <p className="text-2xl text-gray-500 absolute top-[6rem] left-1/2 transform -translate-x-1/2">11.00 am</p>
-              <p className="text-2xl text-gray-500 absolute top-[12.5rem] left-1/2 transform -translate-x-1/2">12.00 pm</p>
-              <p className="text-2xl text-gray-500 absolute top-[19rem] left-1/2 transform -translate-x-1/2">01.00 pm</p>
-              <p className="text-2xl text-gray-500 absolute top-[24.5rem] left-1/2 transform -translate-x-1/2">02.00 pm</p>
-              <p className="text-2xl  text-gray-500 absolute top-[30.5rem] left-1/2 transform -translate-x-1/2">03.00 pm</p>
+            <div className="absolute top-[23.5rem] -right-5">
+              <Image src="/moving-flower.png" alt="Moving Flower" width={130} height={126} />
+            </div>
+            <div className="absolute top-20 left-0 -scale-x-100">
+              <Image src="/moving-flower.png" alt="Moving Flower" width={130} height={126} />
+            </div>
+            <div className="absolute top-[23.5rem] -left-5 -scale-x-100">
+              <Image src="/moving-flower.png" alt="Moving Flower" width={130} height={126} />
             </div>
           </div>
-          <div className="w-[367px] h-44 bg-gray-400 mx-auto mt-7 mb-2"></div>
+          {/* Footer */}
+          <div className="w-[367px] h-44 bg-gray-400 mx-auto mt-7 mb-2">
+            <Image src="/footer.jpg" alt="Footer" width={367} height={176} />
+          </div>
         </div>
       </div>
     </main>
