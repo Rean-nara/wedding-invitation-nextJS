@@ -7,9 +7,16 @@ export default {
     extend: {
       animation: {
         fadeIn: "fadeIn 0.3s ease-in-out",
-        slideInDown: "slideInDown 1s ease-in-out 0.25s 1",
-        spinnerGrow: "spinnerGrow 1s ease-in-out 0.25s 1",
-        fadeInUp: "fadeInUp 1s ease-in-out 0.25s 1",
+        fadeInSlow: "fadeIn 1s ease-in-out",
+        slideInDown: "slideInDown 1s ease-in-out 1",
+        spinnerGrow: "spinnerGrow 1s ease-in-out 1",
+        fadeInUp: "fadeInUp 1s ease-in-out 1",
+        fadeInLeft: "fadeInLeft 1s ease-in-out 1",
+        fadeInLeftQuick: "fadeInLeft 0.5s ease-in-out 1",
+        fadeInRight: "fadeInRight 1s ease-in-out 1",
+        fadeInRightQuick: "fadeInRight 0.5s ease-in-out 1",
+        flowerAnimationRight: "flowerAnimationRight 3s ease-in-out infinite",
+        flowerAnimationLeft: "flowerAnimationLeft 3s ease-in-out infinite",
       },
       keyframes: {
         fadeIn: {
@@ -28,6 +35,24 @@ export default {
           "0%": {opacity: 0, transform: "translate3d(0, 100%, 0)"},
           "100%": {opacity: 1, transform: "translate3d(0, 0% 0)"},
         },
+        fadeInLeft: {
+          "0%": {opacity: 0, transform: "translate3d(-100%, 0, 0)"},
+          "100%": {opacity: 1, transform: "translate3d(0, 0% 0)"},
+        },
+        fadeInRight: {
+          "0%": {opacity: 0, transform: "translate3d(100%, 0, 0)"},
+          "100%": {opacity: 1, transform: "translate3d(0, 0% 0)"},
+        },
+        flowerAnimationRight: {
+          "0%": {transform: "rotate(0deg) translateX(0)"},
+          "50%": {transform: "rotate(5deg) translateX(15px)"},
+          "100%": {transform: "rotate(0deg) translateX(0)"},
+        },
+        flowerAnimationLeft: {
+          "0%": {transform: "rotate(0deg) translateX(0) scaleX(-1)"},
+          "50%": {transform: "rotate(-5deg) translateX(-15px) scaleX(-1)"},
+          "100%": {transform: "rotate(0deg) translateX(0) scaleX(-1)"},
+        },
       },
       colors: {
         background: "var(--background)",
@@ -35,5 +60,5 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [require("tailwindcss-animation-delay")],
 };

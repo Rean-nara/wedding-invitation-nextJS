@@ -4,7 +4,6 @@ import Announce from "@/components/announce";
 import Timer from "@/components/timer";
 import Couple from "@/components/couple";
 import Memories from "@/components/memories";
-import When from "@/components/when";
 import RSVP from "@/components/rsvp";
 import Plan from "@/components/plan";
 import Footer from "@/components/footer";
@@ -21,7 +20,6 @@ export default function Home() {
           <Timer />
           <Couple />
           <Memories />
-          <When />
           <RSVP />
           <Plan />
           <Footer />
