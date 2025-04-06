@@ -38,6 +38,6 @@ const Timer = () => {
       </div>
     );
   };
-  return <Countdown date={new Date("2027-02-17T00:00:00")} renderer={renderTimer} />;
+  return <Countdown date={new Date("2025-05-10T00:00:00")} renderer={renderTimer} />;
 };
 export default Timer;

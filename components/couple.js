@@ -22,7 +22,7 @@ const Couple = () => {
         <div className="z-30 ml-2 absolute left-2 bottom-[6.5rem]">
           <Groom width="22" height="28" />
         </div>
-        <h1 className="z-30 ml-[0.8rem] text-sm">Uzumaki Naruto</h1>
+        <h1 className="z-30 ml-[0.8rem] text-sm">Satria Arya Diva</h1>
         <p className="z-30 ml-[0.8rem] text-xs">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna orci auctor vitae nisl. fringilla pellesque amet tempus.</p>
       </div>
       <div className={`rounded-t-full w-44 h-max bg-white shadow-md shadow-black/25 flex flex-col relative ${isVisible ? "animate-fadeInUp" : "opacity-0"}`}>
