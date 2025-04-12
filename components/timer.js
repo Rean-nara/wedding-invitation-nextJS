@@ -2,7 +2,10 @@
 import Image from "next/image";
 import {useIsVisible} from "./visibilityobserver";
 import {useRef} from "react";
-import Countdown from "react-countdown";
+import dynamic from "next/dynamic";
+
+const Countdown = dynamic(() => import("react-countdown"), { ssr: false });
+ 
 
 const Timer = () => {
   const ref = useRef(null);
