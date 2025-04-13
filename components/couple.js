@@ -9,7 +9,7 @@ const Couple = () => {
   const ref = useRef(null);
   const isVisible = useIsVisible(ref);
   return (
-    <div className="relative flex gap-3 justify-center">
+    <div className="relative flex gap-3 text-black justify-center">
       <div className={`rounded-t-full w-44 h-max bg-white shadow-md shadow-black/25 flex flex-col relative ${isVisible ? "animate-fadeInUp" : "opacity-0"}`}>
         <div className="flex justify-center">
           <Image src="/groom.jpg" alt="Groom" width={150} height={185} className="w-[150px] h-[185px] rounded-t-full mt-4" />

@@ -28,20 +28,20 @@ export default function UndanganPage() {
       <div className="bg-slate-900 text-white flex  justify-center min-h-screen">
         <div className="w-[412px] overflow-hidden">
           {!isOpen ? (
-            <div className="flex flex-col justify-center translate-x-0 ease-in-out animation-delay-100  items-center h-screen text-center">
+            <div className="flex flex-col justify-center p-0 translate-x-0 ease-in-out animation-delay-100  items-center h-screen text-center">
               <Image
-                src="/couple.png"
+                src="/married.jpg"
                 width={300}
-                height={300}
+                height={200}
                 alt="Undangan Pernikahan"
-                className="z-0 brightness-50 border-2 animate-fadeInSlow  border-white rounded-3xl p-5"
-                priority
+                className="z-0 h-4/6  w-4/5   animate-fadeInSlow  border-white rounded-3xl "
+                priority 
               />
               <h1 className="text-3xl font-bold mt-4 animate-fadeInLeft animation-delay-500 "> Selamat Datang, {decodeURIComponent(name  || "Tamu Undangan")}</h1>
               <p className="text-sm mb-4">Kami mengundangmu ke acara pernikahan kami.</p>
               <button
                 onClick={() => setIsOpen(true)}
-                className="bg-white text-slate-900 px-5 py-2 rounded-full hover:bg-slate-300 duration-300"
+                className="bg-yellow-400 text-white animate-fadeInSlow  px-5 py-2 rounded-full hover:bg-slate-300 duration-300 font-semibold"
               >
                 Buka Undangan
               </button>
@@ -49,11 +49,13 @@ export default function UndanganPage() {
           ) : (
             <>
               <Announce />
-              <Timer />
+              
               <Couple />
+              <Timer />
               <Memories />
               <RSVP />
               <Plan />
+             
               <Footer />
             </>
           )}
