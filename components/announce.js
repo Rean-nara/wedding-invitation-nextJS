@@ -18,9 +18,10 @@ const Announce = () => {
   return (
     <div className="relative">
       <Image src="/header-flower.png" alt="Header Flower" width={412} height={38} priority className={`${isVisible1 ? "animate-slideInDown" : "opacity-0"}`} />
-      <h1 className={`${italianno.className} text-[3.5rem] flex justify-center  text-center align-middle${isVisible1 ? "animate-spinnerGrow" : ""}`}>We're Getting Married</h1>
+       <h3 className={`$  text-[1rem]/[2rem] animate-fadeIn flex justify-center ${isVisible1 ? "animate-spinnerGrow" : "opacity-0"}`} ref={ref}>The intimmate Wedding Of</h3>
+      <h1 className={`${italianno.className} text-yellow-400    text-[3.5rem] animate-fadeIn flex justify-center  text-center align-middle${isVisible1 ? "animate-spinnerGrow" : ""}`}>Satria & Fannia</h1>
       <div className={`flex justify-center relative ${isVisible1 ? "animate-spinnerGrow" : "opacity-0"}`} ref={ref1}>
-        <Image className="z-20" src="/married.jpg" alt="Frame Couple" width={326} height={396} priority />
+        <Image  src="/married.png" alt="Frame Couple" width={326} height={396} priority />
         <div className="absolute left-1/2 top-8 -translate-x-1/2 w-max h-vh">
           
         </div>

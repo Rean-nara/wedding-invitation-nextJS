@@ -14,6 +14,9 @@ import RSVP from "@/components/rsvp";
 import Plan from "@/components/plan";
 import Footer from "@/components/footer";
 import "/app/globals.css";
+import { MailOpen } from "lucide-react";
+import WeddingGift from "@/components/gift";
+import GiftSection from "@/components/giftSection";
 
 const josefin = Josefin_Sans({
   subsets: ["latin"],
@@ -36,7 +39,7 @@ export default function Home() {
   return (
     <main className={josefin.className}>
       <div className="bg-slate-900 text-white flex justify-center min-h-screen">
-        <div className="w-[412px] overflow-hidden">
+        <div className="w-[352px] overflow-hidden">
           <AnimatePresence>
             {!isOpen && (
               <motion.div
@@ -55,7 +58,7 @@ export default function Home() {
                     src="/married.jpg"
                     alt="Cover"
                     width={400}
-                    height={500}
+                    height={300}
                     className="rounded-2xl shadow-lg brightness-75"
                     priority
                   />
@@ -67,7 +70,7 @@ export default function Home() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 1 }}
                 >
-                  Selamat Datang {name}
+                  Selamat Datang <span className="text-yellow-400">  {name}</span>
                 </motion.h1>
 
                 <motion.p
@@ -81,12 +84,12 @@ export default function Home() {
 
                 <motion.button
                   onClick={handleOpenInvitation}
-                  className="mt-4 bg-white text-slate-900 px-5 py-2 rounded-full hover:bg-slate-300 duration-300"
+                  className="mt-4 bg-white text-center flex text-slate-900 px-5 py-2 rounded-full hover:bg-yellow-400 hover:text-white hover:font-semibold duration-300 "
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 1.5 }}
                 >
-                  Buka Undangan
+                 <MailOpen/>  Buka Undangan
                 </motion.button>
               </motion.div>
             )}
@@ -96,11 +99,13 @@ export default function Home() {
             <>
               <Announce />
              
-              <Couple />
+              <Couple /> 
               <Memories />
-               <Timer />
+              <Timer />
               <RSVP />
               <Plan />
+              <WeddingGift/>
+              <GiftSection/>
               <Footer />
             </>
           )}

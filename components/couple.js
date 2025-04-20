@@ -22,7 +22,7 @@ const Couple = () => {
         <div className="z-30 ml-2 absolute left-2 bottom-[6.5rem]">
           <Groom width="22" height="28" />
         </div>
-        <h1 className="z-30 ml-[0.8rem] text-lg  font-semibold">Satria Arya Diva</h1>
+        <h1 className="z-30 ml-[0.8rem] text-base    font-semibold">Satria Arya Diva</h1>
         <p className="z-30 ml-[0.8rem] text-sm">Putra pertama dari Bapak Afriyon Damaco  dan Ibu Yenni novita.</p>
       </div>
       <div className={`rounded-t-full w-44 h-max bg-white shadow-md shadow-black/25 flex flex-col relative ${isVisible ? "animate-fadeInUp" : "opacity-0"}`}>
@@ -35,10 +35,10 @@ const Couple = () => {
         <div className="absolute w-11 h-[85px] rounded-t-full z-20 bg-white right-[5.25rem] bottom-[2rem]"></div>
         <div className="absolute w-11 h-[85px] rounded-t-full z-20 bg-white right-[7.50rem] bottom-[2rem]"></div>
         <div className="z-30 mr-2 absolute right-2 bottom-[6.5rem]">
-          <Bride width="22" height="28" />
+          <Bride width="22" height="24" />
         </div>
-        <h1 className="z-30 mr-[0.8rem] text-lg text-end font-semibold">Dwi Fannia Ananda</h1>
-        <p className="z-30 mr-[0.8rem] text-sm text-end  font-medium">Anak kedua dari Bapak Irfan Ikhwan  dan Ibu Witria Ningsih.</p>
+        <h1 className="z-30 ml-[0.8rem] text-sm  font-semibold">Dwi Fannia Ananda</h1>
+        <p className="z-30 ml-[0.8rem] text-sm">anak kedua dari Bapak Irfan Ikhwan dan Ibu Witria Ningsih.</p>
       </div>
       <div ref={ref} className="opacity-0 w-full absolute h-4 bottom-20"></div>
     </div>
