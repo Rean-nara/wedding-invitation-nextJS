@@ -55,11 +55,11 @@ export default function Home() {
                   transition={{ delay: 2, duration: 0.8 }}
                 >
                   <Image
-                    src="/married.jpg"
+                    src="/married.png"
                     alt="Cover"
                     width={400}
                     height={300}
-                    className="rounded-2xl shadow-lg brightness-75"
+                    className="rounded-2xl shadow-lg "
                     priority
                   />
                 </motion.div>
