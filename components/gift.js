@@ -79,37 +79,6 @@ export default function WeddingGift() {
         </button>
       </div>
 
-      <form className="w-full max-w-md space-y-4 text-sm">
-        <p className="text-yellow-100 font-semibold">Fill the form below, please</p>
-
-        <input
-          type="text"
-          placeholder="Account Owner Name"
-          className="w-full border-b bg-transparent text-white placeholder-yellow-300 focus:outline-none py-1"
-          value={form.name}
-          onChange={(e) => setForm({ ...form, name: e.target.value })}
-        />
-        <textarea
-          placeholder="Message"
-          className="w-full border-b bg-transparent text-white placeholder-yellow-300 focus:outline-none py-1"
-          value={form.message}
-          onChange={(e) => setForm({ ...form, message: e.target.value })}
-        />
-        <input
-          type="number"
-          placeholder="Amount"
-          className="w-full border-b bg-transparent text-white placeholder-yellow-300 focus:outline-none py-1"
-          value={form.amount}
-          onChange={(e) => setForm({ ...form, amount: e.target.value })}
-        />
-
-        <button
-          type="submit"
-          className="w-full bg-yellow-600 text-white py-2 mt-4 rounded-full hover:bg-yellow-700 transition"
-        >
-          Next
-        </button>
-      </form>
     </div>
   );
 }
