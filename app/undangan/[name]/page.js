@@ -105,7 +105,7 @@ export default function Home() {
               <RSVP />
               <Plan />
               <WeddingGift/>
-              <GiftSection/>
+              
               <Footer />
             </>
           )}

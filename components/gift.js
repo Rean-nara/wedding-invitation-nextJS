@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { Copy } from "lucide-react";
 import Image from "next/image";
+import GiftSection from "./giftSection";
 
 const bankOptions = [
   {
@@ -58,7 +59,7 @@ export default function WeddingGift() {
         ))}
       </select>
 
-      <div className="bg-white text-yellow-900 flex flex-col rounded-lg p-4 w-full max-w-md items-center shadow-md mb-4">
+      <div className="bg-white text-yellow-900 h-fit flex flex-col rounded-lg p-4 w-full max-w-md items-center shadow-md mb-4">
        <Image src={selectedBank.Symbolbank} alt={selectedBank.name} width={200} height={400} className=" p-4 " />
         <p className="text-center font-bold text-sm mb-2">
           {selectedBank.name} ({selectedBank.code})
@@ -79,6 +80,7 @@ export default function WeddingGift() {
         </button>
       </div>
 
+      <GiftSection/>
     </div>
   );
 }

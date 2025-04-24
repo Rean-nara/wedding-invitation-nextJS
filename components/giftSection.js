@@ -7,7 +7,7 @@ export default function GiftSection() {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = () => {
-    navigator.clipboard.writeText("Jalan Kenari");
+    navigator.clipboard.writeText("083867691938");
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -24,11 +24,16 @@ export default function GiftSection() {
       price: 300000,
       total: 2,
       image: "/images/mirror.jpg", // ganti sesuai path gambar kamu
-    },
+    },{
+        name: "Bed Cover",
+        price: 500000,
+        total: 2,
+        image: "/images/bedcover.jpg", // ganti sesuai path gambar kamu
+      },
   ];
 
   return (
-    <section className="bg-emerald-900 min-h-screen p-4 text-yellow-100 font-sans">
+    <section className="bg-[#145555] mt-4 min-h-screen p-4 text-yellow-100 font-sans">
  
       <p className="text-center text-sm mb-6">
         Silahkan kirimkan hadiah kepada kedua mempelai
@@ -36,13 +41,13 @@ export default function GiftSection() {
 
       <div className="bg-yellow-50 text-yellow-900 rounded-lg p-4 mb-6">
         <p>
-          <span className="font-semibold">Recipient&apos;s Name:</span> Sandi
+          <span className="font-semibold">Recipient&apos;s Name:</span> Fannia
         </p>
         <p>
           <span className="font-semibold">Phone Number:</span> 081425462354
         </p>
         <p>
-          <span className="font-semibold">Alamat Pengiriman:</span> Jalan Kenari
+          <span className="font-semibold">Alamat Pengiriman:</span>jl hm yamin gg lurah
         </p>
         <button
           onClick={handleCopy}
@@ -73,9 +78,7 @@ export default function GiftSection() {
               <p className="font-bold">{gift.name}</p>
               <p>Rp {gift.price.toLocaleString("id-ID")}</p>
               <p>Total: {gift.total}</p>
-              <button className="text-xs text-green-700 mt-2 hover:underline">
-                Gift Details
-              </button>
+              
             </div>
           </div>
         ))}
