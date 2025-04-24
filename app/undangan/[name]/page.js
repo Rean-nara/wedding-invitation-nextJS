@@ -59,7 +59,7 @@ export default function Home() {
                     alt="Cover"
                     width={400}
                     height={300}
-                    className="rounded-2xl shadow-lg "
+                    className="rounded-2xl max-w-full shadow-lg "
                     priority
                   />
                 </motion.div>
