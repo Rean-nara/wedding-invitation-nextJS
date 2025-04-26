@@ -40,6 +40,9 @@ export default function Home() {
     <main className={josefin.className}>
       <div className="bg-slate-900 text-white flex justify-center min-h-screen">
         <div className="w-[352px] overflow-hidden">
+         
+        
+       
           <AnimatePresence>
             {!isOpen && (
               <motion.div
@@ -48,14 +51,16 @@ export default function Home() {
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: -800, opacity: 0 }}
                 transition={{ duration: 2, ease: "easeInOut" }}
+
               >
+            
                 <motion.div
                   initial={{ scale: 0.95, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
                   transition={{ delay: 2, duration: 0.8 }}
                 >
                   <Image
-                    src="/married.png"
+                    src="/Cover.png"
                     alt="Cover"
                     width={400}
                     height={300}
@@ -81,7 +86,16 @@ export default function Home() {
                 >
                   Undangan Pernikahan
                 </motion.p>
+                <motion.div className="flex flex-row justify-center animate-fadeIn  items-center">
+                <Image
+                src="/Orn-04.png"
+                  width={80}
+                  height={80}
+                  className=" object-cover p-0  animate-flowerAnimationLeft "
+                  alt="Ornament"
+                  priority
 
+                /> 
                 <motion.button
                   onClick={handleOpenInvitation}
                   className="mt-4 bg-white text-center flex text-slate-900 px-5 py-2 rounded-full hover:bg-yellow-400 hover:text-white hover:font-semibold duration-300 "
@@ -91,6 +105,19 @@ export default function Home() {
                 >
                  <MailOpen/>  Buka Undangan
                 </motion.button>
+                <Image
+                src="/Orn-02.png"
+                  width={80}
+                  height={80}
+                  className=" object-cover animate-flowerAnimationRight  space-y-reverse "
+                  alt="Ornament"
+                  priority
+
+                />
+
+                </motion.div>
+                  
+                
               </motion.div>
             )}
           </AnimatePresence>

@@ -17,19 +17,14 @@ export default function GiftSection() {
       name: "Bed Cover",
       price: 500000,
       total: 2,
-      image: "/images/bedcover.jpg", // ganti sesuai path gambar kamu
+      image: "/bed.jpeg", // ganti sesuai path gambar kamu
     },
     {
       name: "Mirror",
       price: 300000,
       total: 2,
-      image: "/images/mirror.jpg", // ganti sesuai path gambar kamu
-    },{
-        name: "Bed Cover",
-        price: 500000,
-        total: 2,
-        image: "/images/bedcover.jpg", // ganti sesuai path gambar kamu
-      },
+      image: "/mirror.jpeg", // ganti sesuai path gambar kamu
+    }, 
   ];
 
   return (
@@ -39,7 +34,7 @@ export default function GiftSection() {
         Silahkan kirimkan hadiah kepada kedua mempelai
       </p>
 
-      <div className="bg-yellow-50 text-yellow-900 rounded-lg p-4 mb-6">
+      <div className="bg-yellow-50 text-start text-yellow-900 rounded-lg p-4 mb-6">
         <p>
           <span className="font-semibold">Recipient&apos;s Name:</span> Fannia
         </p>
@@ -61,21 +56,21 @@ export default function GiftSection() {
         Gift Recommendations
       </div>
 
-      <div className="space-y-4">
+      <div className="space-y-4 min-h-fit">
         {gifts.map((gift, index) => (
           <div
             key={index}
-            className="bg-yellow-50 text-yellow-900 rounded-lg flex gap-4 p-4 items-center"
+            className="bg-yellow-50 text-yellow-900 rounded-lg flex gap-4a  items-center"
           >
             <Image
               src={gift.image}
               alt={gift.name}
-              width={100}
-              height={100}
-              className="rounded object-cover"
+              width={190}
+              height={190}
+              className="rounded p-0 bg-center bg-cover m-0 object-cover"
             />
-            <div>
-              <p className="font-bold">{gift.name}</p>
+            <div className="flex flex-col gap-3 pl-2" >
+              <p className="font-bold text-[#145555]">{gift.name}</p>
               <p>Rp {gift.price.toLocaleString("id-ID")}</p>
               <p>Total: {gift.total}</p>
               
