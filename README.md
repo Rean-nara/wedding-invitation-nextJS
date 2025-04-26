@@ -21,7 +21,7 @@ Follow these steps to set up the project locally on your machine:
 
 1. **Clone this repository:**
    ```bash
-   git clone https://github.com/username/wedding-invitation.git
+   git clone https://github.com/Rean-nara/wedding-invitation-nextJS.git
    ```
 
 2. **Navigate to the project directory:**
