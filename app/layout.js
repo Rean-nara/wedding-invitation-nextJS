@@ -1,8 +1,12 @@
-export const metadata = {
+import "./globals.css";
+ 
+
+export const metadata  = {
+  metadataBase: new URL("https://satriafania.vercel.app"),
   title: "Satria & Fannia",
   description: "Undangan digital pernikahan Satria & Fannia. Klik untuk lihat acara , dan lainnya.",
   icons: {
-    icon: "/LOve.ico", // bisa juga "/favicon.svg"
+    icon: "/LOve.ico",
     shortcut: "/LOve.ico",
   },
   openGraph: {
