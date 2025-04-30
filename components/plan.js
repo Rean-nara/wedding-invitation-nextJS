@@ -69,40 +69,40 @@ const Plan = () => {
             <div className="w-max h-max mx-auto">
               <Drinks />
             </div>
-            <p className="text-sm text-gray-500 mt-1">Welcome Drinks</p>
+            <p className="text-sm text-yellow-500 mt-1">Welcome Drinks</p>
           </div>
           <div className="text-center">
             <div className="w-max h-max mx-auto">
               <Ring />
             </div>
-            <p className="text-sm text-gray-500 mt-1">Ceremony</p>
+            <p className="text-sm text-yellow-500 mt-1">Ceremony</p>
           </div>
           <div className="text-center">
             <div className="w-max h-max mx-auto">
               <Camera />
             </div>
-            <p className="text-sm text-gray-500 mt-1">Party Photos</p>
+            <p className="text-sm text-yellow-500 mt-1">Party Photos</p>
           </div>
           <div className="text-center">
             <div className="w-max h-max mx-auto">
               <Lunch />
             </div>
-            <p className="text-sm text-gray-500 mt-1">Lunch Time</p>
+            <p className="text-sm text-yellow-500 mt-1">Lunch Time</p>
           </div>
           <div className="text-center">
             <div className="w-max h-max mx-auto">
               <Closing />
             </div>
-            <p className="text-sm text-gray-500 mt-1">Closing</p>
+            <p className="text-sm text-yellow-500 mt-1">Closing</p>
           </div>
         </div>
         {/* Time */}
-        <div className={`${italianno.className} absolute top-0 w-full -right-[3.75rem]`}>
-          <p className="text-2xl text-gray-500 absolute top-[6rem] left-1/2 transform -translate-x-1/2">11.00 am</p>
-          <p className="text-2xl text-gray-500 absolute top-[12.5rem] left-1/2 transform -translate-x-1/2">12.00 pm</p>
-          <p className="text-2xl text-gray-500 absolute top-[19rem] left-1/2 transform -translate-x-1/2">01.00 pm</p>
-          <p className="text-2xl text-gray-500 absolute top-[24.5rem] left-1/2 transform -translate-x-1/2">02.00 pm</p>
-          <p className="text-2xl  text-gray-500 absolute top-[30.5rem] left-1/2 transform -translate-x-1/2">03.00 pm</p>
+        <div className={`${italianno.className} absolute font-semibold top-0 w-full -right-[3.75rem]`}>
+          <p className="text-2xl text-yellow-500 absolute top-[6rem] left-1/2 transform -translate-x-1/2">11.00 </p>
+          <p className="text-2xl text-yellow-500 absolute top-[12.5rem] left-1/2 transform -translate-x-1/2">12.00 </p>
+          <p className="text-2xl text-yellow-500  absolute top-[19rem] left-1/2 transform -translate-x-1/2">13.00 </p>
+          <p className="text-2xl text-yellow-500 absolute top-[24.5rem] left-1/2 transform -translate-x-1/2">14.00 </p>
+          <p className="text-2xl  text-yellow-500 absolute top-[30.5rem] left-1/2 transform -translate-x-1/2">20.00 </p>
         </div>
       </div>
       {/* Moving flower */}

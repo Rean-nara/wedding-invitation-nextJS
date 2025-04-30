@@ -21,10 +21,8 @@ const Announce = () => {
        <h3 className={`$  text-[1rem]/[2rem] animate-fadeIn flex justify-center ${isVisible1 ? "animate-spinnerGrow" : "opacity-0"}`} ref={ref}>The intimmate Wedding Of</h3>
       <h1 className={`${italianno.className} text-yellow-400    text-[3.5rem] animate-fadeIn flex justify-center  text-center align-middle${isVisible1 ? "animate-spinnerGrow" : ""}`}>Satria & Fannia</h1>
       <div className={`flex justify-center relative ${isVisible1 ? "animate-spinnerGrow" : "opacity-0"}`} ref={ref1}>
-        <Image  src="/Hero.jpg" alt="Frame Couple" width={326} height={396} priority />
-        <div className="absolute left-1/2 top-8 -translate-x-1/2 w-max h-vh">
-          
-        </div>
+        <Image  src="/Hero.jpg" alt="Frame Couple" width={326} className="rounded-lg  brightness-90" height={396} priority />
+         
       </div>
       <div className={`flex flex-col justify-center items-center ${isVisible2 ? "animate-spinnerGrow" : "opacity-0"}`} ref={ref2}>
         <h1 className={` text-[1rem]/[2rem]  bg-[url('/public/frame-couple.png)] mt-4  p-4  rounded-full  text-center flex justify-center`}>"And among His Signs is this, that He created for you mates from among yourselves, that He may dwell in tranquillity with them, and He has put love and mercy between your (hearts): verily in that are Signs for those who reflect."

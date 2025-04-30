@@ -36,16 +36,12 @@ const Memories = () => {
       </h1>
       <div className="flex flex-col gap-y-6">
         <div className="flex justify-evenly" ref={ref2}>
-          <div className={`w-40 h-44 flex justify-center items-center bg-white shadow-md shadow-black/25 ${isVisible2 ? "animate-fadeInLeft" : "opacity-0"}`} onClick={() => openModal("/moment-1.jpg")}>
+          <div className={`w-40 h-44 flex justify-center items-center bg-white shadow-md shadow-black/25 ${isVisible2 ? "animate-fadeInLeft" : "opacity-0"}`} onClick={() => openModal("/moment-1.jpg")}> 
             <div className="w-36 h-40 bg-gray-400 overflow-hidden cursor-pointer">
-              <Image src="/moment-1.jpg" alt="Our Moment" width={144} height={160} />
+             
             </div>
           </div>
-          <div className={`w-40 h-44 flex justify-center items-center bg-white shadow-md shadow-black/25 ${isVisible2 ? "animate-fadeInRight" : "opacity-0"}`} onClick={() => openModal("/moment-2.jpg")}>
-            <div className="w-36 h-40 bg-gray-400 overflow-hidden">
-              <Image src="/moment-2.jpg" alt="Our Moment" width={144} height={160} />
-            </div>
-          </div>
+         
         </div>
         <div className="flex justify-evenly" ref={ref3}>
           <div className={`w-28 h-32 flex justify-center items-center rounded-l-full bg-white shadow-md shadow-black/25 ${isVisible3 ? "animate-fadeInLeft" : "opacity-0"}`} onClick={() => openModal("/moment-left-1.png")}>
@@ -70,15 +66,11 @@ const Memories = () => {
               <Image src="/moment-4.jpg" alt="Our Moment" width={144} height={160} />
             </div>
           </div>
-          <div className={`w-40 h-44 flex justify-center items-center bg-white shadow-md shadow-black/25 ${isVisible4 ? "animate-fadeInRight" : "opacity-0"}`} onClick={() => openModal("/moment-5.jpg")}>
-            <div className="w-36 h-40 bg-gray-400 overflow-hidden">
-              <Image src="/moment-5.jpg" alt="Our Moment" width={144} height={160} />
-            </div>
-          </div>
+        
         </div>
         {/* Popup Picture */}
         {isModalOpen && (
-          <div className="fixed inset-0 bg-black/50 flex justify-center items-center z-50 animate-fadeIn" onClick={closeModal}>
+          <div className="fixed inset-0   bg-black/50 flex justify-center items-center z-50 animate-fadeIn" onClick={closeModal}>
             <div className="relative bg-white shadow-lg overflow-hidden w-72 h-80" onClick={(e) => e.stopPropagation()}>
               <Image src={selectedImage} alt="Expanded Moment" width={288} height={320} className="w-full h-full object-contain" priority />
               <button className="absolute top-2 right-2 bg-white rounded-full p-2 w-7 h-7 flex justify-center items-center" onClick={closeModal}>
