@@ -24,7 +24,7 @@ const bankOptions = [{
     code: "014",
  
     Symbolbank: "/bca.png",
-    accountNumber: "1234567890",
+    accountNumber: "8005130235",
     accountName: "Satria Arya Diva",
   },
 ];

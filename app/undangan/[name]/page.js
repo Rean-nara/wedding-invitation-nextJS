@@ -21,6 +21,7 @@ import AudioPlayer from "@/components/AudioPlayer";
 
 
 import "/app/globals.css";
+import TurutMengundang from "@/components/mengundang";
 
 const josefin = Josefin_Sans({
   subsets: ["latin"],
@@ -135,6 +136,7 @@ export default function Home() {
               <RSVP />
               <Plan />
               <WeddingGift />
+              <TurutMengundang/>
               <Footer />
             </>
           )}
