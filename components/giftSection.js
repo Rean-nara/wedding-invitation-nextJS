@@ -28,7 +28,7 @@ export default function GiftSection() {
   ];
 
   return (
-    <section className="bg-[#145555] mt-4 min-h-screen p-4 text-yellow-100 font-sans">
+    <section className="bg-[#145555] mt-4  h-fit p-4 text-yellow-100 font-sans">
  
       <p className="text-center text-sm mb-6">
         Silahkan kirimkan hadiah kepada kedua mempelai

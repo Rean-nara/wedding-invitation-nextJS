@@ -52,7 +52,7 @@ export default function Home() {
       <AudioPlayer ref={audioRef} />
 
       <div className="bg-slate-900 text-white flex justify-center min-h-screen">
-        <div className="w-[352px] overflow-hidden">
+        <div className="w-[352px] overflow-hidden  ">
           <AnimatePresence>
             {!isOpen && (
               <motion.div
@@ -127,7 +127,7 @@ export default function Home() {
           </AnimatePresence>
 
           {isOpen && (
-            <>
+            < >
               <Announce />
               <Couple />
               <Memories />

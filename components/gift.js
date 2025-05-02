@@ -37,7 +37,7 @@ export default function WeddingGift() {
   };
 
   return (
-    <div className="min-h-screen py-10 px-4 mt-4 rounded-t-md    bg-[#145555] text-yellow-100 flex flex-col items-center font-sans">
+    <div className=" mt-44 h-fit py-10 px-4   rounded-t-md    bg-[#145555] text-yellow-100 flex flex-col items-center font-sans">
       <h2 className="text-3xl font-bold mb-2">Wedding Gift</h2>
       <p className="text-center max-w-md mb-6 text-sm">
         Your blessing and coming to our wedding are enough for us. However, if you want to give a gift we provide a Digital Envelope to make it easier for you. Thank you

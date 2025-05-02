@@ -58,7 +58,7 @@ const Timer = () => {
 
   return (
     <div className="flex justify-center items-center   min-h-fit    ">
-      <div className="grid grid-cols-2 gap-4  mt-5 z-50">
+      <div className="grid grid-cols-2 gap-4  mt-5 z-40">
         {timeUnits.map((unit, i) => (
           <motion.div
             key={unit.label}
