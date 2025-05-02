@@ -36,12 +36,21 @@ const Memories = () => {
     <div className="py-16 px-4">
       <h1
         ref={ref1}
-        className={`${italianno.className} text-5xl text-center my-10 ${
+        className={`${italianno.className} text-5xl text-center my-6 ${
           isVisible1 ? "animate-spinnerGrow" : "opacity-0"
         }`}
       >
         Our Sweet Memories
       </h1>
+
+      {/* Narasi tambahan */}
+      <p
+        className={`text-center text-sm text-gray-300 max-w-md mx-auto mb-8 ${
+          isVisible1 ? "animate-fadeInSlow" : "opacity-0"
+        }`}
+      >
+        This is our story — from a beautiful first love in high school to a lifetime journey together. Cherished moments that shaped who we are today.
+      </p>
 
       <div className="flex flex-col gap-8">
 
