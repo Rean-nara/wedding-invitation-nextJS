@@ -79,12 +79,12 @@ export default function Home() {
                 </motion.div>
 
                 <motion.h1
-                  className="text-3xl font-bold mt-6"
+                  className="text-2xl font-bold mt-6"
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 1 }}
                 >
-                  Selamat Datang <span className="text-yellow-400">{name}</span>
+                  Selamat Datang <span className="text-yellow-400 capitalize ">{name}</span>
                 </motion.h1>
 
                 <motion.p
@@ -93,7 +93,7 @@ export default function Home() {
                   animate={{ opacity: 1 }}
                   transition={{ delay: 1.2 }}
                 >
-                  Undangan Pernikahan
+                
                 </motion.p>
 
                 <motion.div className="flex flex-row justify-center items-center">
@@ -107,12 +107,12 @@ export default function Home() {
                   />
                   <motion.button
                     onClick={handleOpenInvitation}
-                    className="mt-4 bg-white text-center flex text-slate-900 px-5 py-2 rounded-full hover:bg-yellow-400 hover:text-white hover:font-semibold duration-300"
+                    className="mt-4 bg-white text-center flex font-bold text-slate-900 px-5 py-2 rounded-full hover:bg-yellow-400 hover:text-white hover:font-semibold duration-300"
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 1.5 }}
                   >
-                    <MailOpen /> Buka Undangan
+                    <MailOpen /> Open Invitation
                   </motion.button>
                   <Image
                     src="/Orn-02.png"
