@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import {Italianno} from "next/font/google";
+import { Italianno } from "next/font/google";
 import {useIsVisible} from "./visibilityobserver";
 import {useRef} from "react";
 const italianno = Italianno({

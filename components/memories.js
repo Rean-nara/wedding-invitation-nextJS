@@ -1,8 +1,9 @@
 "use client";
 import Image from "next/image";
-import {useState, useRef} from "react";
-import {useIsVisible} from "./visibilityobserver";
-import {Italianno} from "next/font/google";
+import { useState, useRef } from "react";
+import { useIsVisible } from "./visibilityobserver";
+import { Italianno } from "next/font/google";
+
 const italianno = Italianno({
   subsets: ["latin"],
   weight: "400",
@@ -17,6 +18,7 @@ const Memories = () => {
   const isVisible3 = useIsVisible(ref3);
   const ref4 = useRef(null);
   const isVisible4 = useIsVisible(ref4);
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState("");
 
@@ -29,54 +31,127 @@ const Memories = () => {
     setIsModalOpen(false);
     setSelectedImage("");
   };
+
   return (
-    <div>
-      <h1 className={`${italianno.className} mt-20 text-[3.5rem] flex justify-center my-7 ${isVisible1 ? "animate-spinnerGrow" : "opacity-0"}`} ref={ref1}>
-        Our Sweets Memories
+    <div className="py-16 px-4">
+      <h1
+        ref={ref1}
+        className={`${italianno.className} text-5xl text-center my-10 ${
+          isVisible1 ? "animate-spinnerGrow" : "opacity-0"
+        }`}
+      >
+        Our Sweet Memories
       </h1>
-      <div className="flex flex-col gap-y-6">
-        <div className="flex justify-evenly bg-fixed bg-cover" ref={ref2}>
-          <div className={`w-full rounded h-44 bg-cover justify-center items-center shadow-md shadow-black/25 ${isVisible2 ? "animate-fadeInLeft" : "opacity-0"}`} onClick={() => openModal("/ws.jpg")}> 
-            <div className="w-full h-full  bg-cover  overflow-hidden cursor-pointer">
-            
-              <Image src="/ws.jpg" alt="Our Moment" width={1344} height={1334} />
-       
-            </div>
-          </div>
-         
-        </div>
-        <div className="flex justify-evenly" ref={ref3}>
-          <div className={`w-28 h-32 flex justify-center items-center rounded-l-full  shadow-md shadow-black/25 ${isVisible3 ? "animate-fadeInLeft" : "opacity-0"}`} onClick={() => openModal("/memo1.jpg")}>
-            <div className="w-24 h-28 rounded-l-full bg-gray-400 overflow-hidden">
-              <Image src="/memo1.jpg" alt="Our Moment" width={96} height={112} />
-            </div>
-          </div>
-          <div className={`w-38 h-32 flex justify-center items-center  shadow-md shadow-black/25 ${isVisible3 ? "animate-fadeInSlow" : "opacity-0"}`} onClick={() => openModal("/memo2.jpg")}>
-            <div className="w-24 h-28 overflow-hidden">
-              <Image src="/memo2.jpg" alt="Our Moment" width={106} height={112} className="object-bottom object-none" />
-            </div>
-          </div>
-          <div className={`w-28 h-32 flex justify-center items-center rounded-r-full   shadow-md shadow-black/25 ${isVisible3 ? "animate-fadeInRight" : "opacity-0"}`} onClick={() => openModal("/memo3.jpg")}>
-            <div className="w-24 h-28 rounded-r-full bg-gray-400 overflow-hidden">
-              <Image src="/memo3.jpg" alt="Our Moment" width={96} height={112} />
-            </div>
+
+      <div className="flex flex-col gap-8">
+
+        {/* Gambar 1 (ws.jpg besar) */}
+        <div ref={ref2} className="flex justify-evenly">
+          <div
+            className={`w-full max-w-lg rounded-lg shadow-md shadow-black/25 cursor-pointer overflow-hidden ${
+              isVisible2 ? "animate-fadeInLeft" : "opacity-0"
+            }`}
+            onClick={() => openModal("/ws.jpg")}
+          >
+            <Image
+              src="/ws.jpg"
+              alt="Our Moment"
+              width={1344}
+              height={1334}
+              className="w-full h-auto object-cover"
+            />
           </div>
         </div>
-        <div className="flex justify-evenly" ref={ref4}>
-          <div className={`w-40 h-44 z-50 flex justify-center items-center backdrop:shadow-md shadow-black/25 ${isVisible4 ? "animate-fadeInLeft" : "opacity-0"}`} onClick={() => openModal("/memo4.jpg")}>
-            <div className="w-36 h-40 bg-gray-400 overflow-hidden">
-              <Image src="/memo4.jpg" alt="Our Moment" width={144} height={160} />
-            </div>
+
+        {/* Gambar 2-4 (3 gambar baris) */}
+        <div ref={ref3} className="flex justify-evenly gap-4">
+          <div
+            className={`rounded-l-full shadow-md shadow-black/25 cursor-pointer overflow-hidden ${
+              isVisible3 ? "animate-fadeInLeft" : "opacity-0"
+            }`}
+            onClick={() => openModal("/memo1.jpg")}
+          >
+            <Image
+              src="/memo1.jpg"
+              alt="Our Moment"
+              width={96}
+              height={112}
+              className="w-24 h-44 object-cover"
+            />
           </div>
-        
+
+          <div
+            className={`shadow-md shadow-black/25 cursor-pointer overflow-hidden ${
+              isVisible3 ? "animate-fadeInSlow" : "opacity-0"
+            }`}
+            onClick={() => openModal("/memo2.jpg")}
+          >
+            <Image
+              src="/memo2.jpg"
+              alt="Our Moment"
+              width={106}
+              height={112}
+              className="w-28 h-full object-cover"
+            />
+          </div>
+
+          <div
+            className={`rounded-r-full shadow-md shadow-black/25 cursor-pointer overflow-hidden ${
+              isVisible3 ? "animate-fadeInRight" : "opacity-0"
+            }`}
+            onClick={() => openModal("/memo3.jpg")}
+          >
+            <Image
+              src="/memo3.jpg"
+              alt="Our Moment"
+              width={96}
+              height={112}
+              className="w-24 h-44 object-cover"
+            />
+          </div>
         </div>
-        {/* Popup Picture */}
+
+        {/* Gambar 5 (memo4.jpg) */}
+        <div ref={ref4} className="flex justify-evenly">
+          <div
+            className={`w-40 h-44 rounded-lg shadow-md shadow-black/25 cursor-pointer overflow-hidden ${
+              isVisible4 ? "animate-fadeInLeft" : "opacity-0"
+            }`}
+            onClick={() => openModal("/memo4.jpg")}
+          >
+            <Image
+              src="/memo4.jpg"
+              alt="Our Moment"
+              width={144}
+              height={160}
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+
+        {/* Popup Picture (Modal) */}
         {isModalOpen && (
-          <div className="fixed inset-0   bg-black/50 flex justify-center items-center z-50 animate-fadeIn" onClick={closeModal}>
-            <div className="relative   shadow-lg overflow-hidden w-4/5 h-2/3" onClick={(e) => e.stopPropagation()}>
-              <Image src={selectedImage} alt="Expanded Moment" width={388} height={320} className="w-full h-full object-contain" priority />
-              <button className="absolute top-2 right-2  rounded-full p-2 w-7 h-7 flex justify-center items-center" onClick={closeModal}>
-                <p className="text-base">✕</p>
+          <div
+            className="fixed inset-0 bg-black/60 flex justify-center items-center z-50 animate-fadeIn"
+            onClick={closeModal}
+          >
+            <div
+              className="relative bg-white rounded-lg overflow-hidden shadow-lg w-11/12 max-w-2xl max-h-[80vh]"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <Image
+                src={selectedImage}
+                alt="Expanded Moment"
+                width={800}
+                height={600}
+                className="w-full h-full object-contain"
+                priority
+              />
+              <button
+                className="absolute top-2 right-2 text-white bg-black/50 rounded-full w-8 h-8 flex items-center justify-center hover:bg-black transition"
+                onClick={closeModal}
+              >
+                ✕
               </button>
             </div>
           </div>
@@ -85,4 +160,5 @@ const Memories = () => {
     </div>
   );
 };
+
 export default Memories;

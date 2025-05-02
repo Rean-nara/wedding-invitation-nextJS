@@ -4,7 +4,13 @@ import { Copy } from "lucide-react";
 import Image from "next/image";
 import GiftSection from "./giftSection";
 
-const bankOptions = [
+const bankOptions = [{
+  name: "BRI",
+  code: "	002",
+  Symbolbank: "/bri.png",
+  accountNumber: "353101037504538",
+  accountName: "Dwi Fannia Ananda",
+},
   {
     name: "Dana",
     code: "008",
